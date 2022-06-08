@@ -4,9 +4,9 @@ import GooglePlacesAutocomplete, {
 } from "react-google-places-autocomplete";
 import {useLoadScript} from "@react-google-maps/api";
 
-export const Google: React.FC  = () => {
+export const GoogleAutocomplete: React.FC  = () => {
     const { isLoaded } = useLoadScript({
-        googleMapsApiKey: "AIzaSyBV1ll58YbfVBC3Ivb8DV6_f-03dKEK1xQ",
+        googleMapsApiKey: "",
         libraries: ["places"],
         language:"en",
     });

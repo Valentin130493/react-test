@@ -6,7 +6,8 @@ import { imagesArr } from "assets";
 // Components
 import { Footer, Carousel } from "components";
 import { Header } from "components/header/Header";
-import {Google} from "../components/Google/Google";
+import {GoogleAutocomplete} from "../components/Google/Google";
+
 
 
 
@@ -37,7 +38,7 @@ const Home: React.FC = () => {
 
 
 
-				<Google />
+				<GoogleAutocomplete />
 
 				{/* Appointment Section */}
 				<div className="appointment-section">
