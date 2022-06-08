@@ -1,0 +1,166 @@
+// Header - Navigation
+.main-header {
+    padding: 21px 0;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    transition: 0.2s;
+
+    &.fixed-header {
+        background-color: $white;
+        box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px 0;
+    }
+
+    .container {
+        max-width: 1250px;
+    }
+
+    .navbar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .navbar-brand {
+            display: block;
+            margin-right: 80px;
+        }
+
+        .navbar-toggler {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
+            @media (min-width:992px) {
+                display: none;
+            }
+
+            img {
+                width: 25px;
+            }
+        }
+
+        .navbar-collapse {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.3s linear;
+            width: 100%;
+
+            @include media991 {
+                // display: none;
+                visibility: hidden;
+                position: absolute;
+                background-color: $white;
+                right: 0;
+                top: 48px;
+                padding: 10px;
+                box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
+                min-width: 100%;
+                transition: transform 0.3s linear;
+            }
+
+            &.collapse-open {
+                // display: block;
+                visibility: visible;
+                transform: translateY(0);
+                transition: transform 0.3s linear;
+                display: block;
+
+            }
+
+            .navbar-nav {
+                display: flex;
+                list-style: none;
+
+                @include media991 {
+                    flex-direction: column;
+                }
+
+                .nav-item {
+                    padding: 0 16px;
+
+                    @include media1366 { padding: 0 10px; }
+                    @include media991 { padding: 6px 0; }
+
+                    .nav-link {
+                        display: block;
+                        @include futuraFontStyle(500, 16, 21, $black);
+                    }
+                }
+            }
+
+            .nav-btn {
+                @include media991 {
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                button {
+                    margin-left: 12px;
+                    @include media991 {
+                        margin-left: 0;
+                        margin-bottom: 10px;
+                        display: inline-flex;
+                        width: fit-content;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Header - Hero Section
+.hero-header {
+    padding: 208px 0 40px;
+    background: #EBEBEB;
+    margin-bottom: 50px;
+
+    @include media767 {
+        padding: 150px 0 40px;
+    }
+
+    &-content {
+        max-width: 615px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        padding-bottom: 120px;
+        @include media767 {
+            padding-bottom: 90px;
+        }
+        @include media575 {
+            padding-bottom: 70px;
+        }
+
+        .hero-header-tagline {
+            @include futuraFontStyle(400, 18, 24, #5A81FA);
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            @include futuraFontStyle(600, 60, 66, $black);
+            letter-spacing: -0.02em;
+            margin-bottom: 22px;
+            @include media991 {
+                @include mediaFontStyle(50, 56);
+            }
+            @include media767 {
+                @include mediaFontStyle(40, 46);
+            }
+            @include media575 {
+                @include mediaFontStyle(30, 36);
+            }
+        }
+        h5 {
+            @include futuraFontStyle(400, 20, 28, $black);
+            @include media575 {
+                @include mediaFontStyle(16, 20);
+            }
+        }
+    }    
+}

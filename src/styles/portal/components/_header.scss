@@ -1,0 +1,84 @@
+// Portal - Header
+.m_portal-header {
+
+    background: #EBEBEB;
+    padding: 20px 0;
+    
+    .mp_header {
+
+        @include flexCenterBetween;
+        width: 100%;
+
+        // Navbar
+        &-nav {
+            li {
+                margin: 0 20px;
+                a {
+                    @include futuraFontStyle(450, 16, 21, $black);
+                }
+            }
+        }
+        
+        // Options
+        &-options {
+            @include flexCenter;
+
+            &-icons {
+                li {
+                    background: #E3E3E3;
+                    border-radius: 50%;
+                    @include square(48px);
+                    @include flexCenterCenter;
+                    margin-left: 12px;
+                }
+            }
+        }
+
+        &-user {
+
+            display: flex;
+            cursor: pointer;
+            margin-left: 40px;
+
+            &-image {
+                position: relative;
+                margin-right: 16px;
+            }
+            
+            &-avatar {
+                @include square(48px);
+                border-radius: 50%;
+
+                img {
+                    @include square(100%);
+                    border-radius: 50%;
+                }
+            }
+
+            &-status {
+                display: block;
+                @include square(8px);
+                border: 1px solid #EBEBEB;
+                border-radius: 50%;
+                position: absolute;
+                bottom: 3px;
+                right: 3px;
+
+                &.active {                    
+                    background: #14AE5C;
+                }
+            }
+
+            &-info {
+                p {
+                    @include futuraFontStyle(450, 18, 23, $black);
+                    margin-bottom: 4px;
+                }
+                span {
+                    @include futuraFontStyle(400, 16, 21, rgba($black, 0.7));
+                }
+            }
+
+        }
+    }
+}

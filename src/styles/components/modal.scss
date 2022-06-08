@@ -1,0 +1,90 @@
+// Modal
+
+.modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 555555;
+
+    &.right {
+        .modal-content {
+            left: auto;
+            right: 0;
+            top: 88px;
+            transform: translate(0);
+            max-height: calc(100vh - 88px);
+            height: 100%;
+            border-radius: 0;
+        }
+    }
+
+    &-overlay {     
+        height: 100%;
+        width: 100%;   
+        background: rgb(52, 59, 66, 0.6);
+    }
+
+    &-close {
+        font-size: 14px;
+        position: absolute;
+        right: 17px;
+        top: 17px;
+        cursor: pointer;
+    }
+
+    &-content {
+        position: absolute;
+        background: #FFFFFF;
+        border-radius: 6px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 380px;
+        width: 100%;
+        max-height: calc(100% - 100px);
+        padding: 60px 40px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        @include media767{
+            padding: 30px 20px;
+        }
+
+        .form-button {
+            margin-top: 0;
+            .button {
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    &-header {
+        margin-bottom: 30px;
+        @include media767 {
+            margin-bottom: 20px;
+        }
+        h3 {            
+            text-align: center;
+            @include futuraFontStyle(500, 24, 24, $black);
+            margin-bottom: 20px;
+            @include media767 {
+                @include mediaFontStyle(20, 24);
+                margin-bottom: 10px;
+            }
+        }
+        p {
+            @include futuraFontStyle(400, 16, 24, $black);
+            @include media767 {
+                @include mediaFontStyle(14, 20);
+            }
+        }
+    }
+
+    &-buttons {
+        button {
+            display: block;
+            margin-bottom: 12px;
+        }
+    }
+}

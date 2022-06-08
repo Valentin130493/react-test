@@ -1,0 +1,222 @@
+// Calendar
+@import './../../styles/helpers/variable.scss';
+@import './../../styles/helpers/mixins.scss';
+@import './../../styles/base/common.scss';
+@import './../../styles/components/modal.scss';
+@import "react-datepicker/dist/react-datepicker.css";
+@import './../../styles/components/_datepicker.scss';
+
+
+
+.m_calendar-layout {
+    .mp_container {
+        display: block !important;
+    }
+}
+
+.mp_appointments-calendar {
+    overflow-x: auto;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    white-space: nowrap;
+    
+    .fc {
+
+        &-scrollgrid {
+            width: -moz-available;
+            width: -webkit-fill-available !important;
+            border: 1px solid #C6C6C6 !important;
+            border-radius: 8px;
+            overflow: hidden;
+            th, td {
+                border: none !important;
+            }
+        }
+
+        &-col-header {
+            .fc-col-header-cell {
+                background: #F0F0F0;
+                border: 1px solid #EBE9E9 !important;
+                @include futuraFontStyle(450, 16, 21, #707070);
+                padding: 12px;
+                width: 150px;
+                @include media(768px) {
+                    padding: 8px;
+                    width: 130px;
+                }
+            }
+        }
+        
+        &-daygrid-body {
+            .fc-daygrid-day {
+                padding: 12px;
+                width: 150px;
+                border: 1px solid #EBE9E9 !important;
+                background-color: $white;
+                
+                @include media(768px) {
+                    padding: 8px;
+                    width: 130px;
+                }
+    
+                &.fc-day-today {                
+                    background: #FFFFFF !important;
+                    .fc-daygrid-day-top {
+                        background-color: $black;
+                        a {
+                            color: $white;
+                        }
+                    }
+                }
+    
+                .fc-daygrid-day-top {
+                    @include square(40px);
+                    background: #F0F0F0;
+                    border-radius: 40px;
+                    @include flexCenterCenter;
+                    margin: 4px;
+                    @include media(768px) {
+                        @include square(30px);
+                    }
+
+                    a {                
+                        @include futuraFontStyle(400, 20, 26, #969696);
+                        @include media(768px) {
+                            @include mediaFontStyle(16, 22);
+                        }
+                    }
+                }
+
+                &-events {
+                    margin-top: 8px;
+                    .fc-daygrid-event {
+                        background-color: $black;
+                        padding: 8px 12px;
+                        h4 {
+                            @include futuraFontStyle(450, 16, 21, $white);
+                            margin-bottom: 4px;
+                        }
+                        p {
+                            @include futuraFontStyle(400, 14, 18, rgba(255, 255, 255, 0.7));
+                        }
+                    }
+                }
+
+            }
+        }
+        
+        &-day-other {
+            .fc-daygrid-day-top {
+                opacity: 0.5 !important;
+            }
+        }
+    
+    }
+}
+
+.mp_appointments-header {
+    @include flexCenterBetween;
+    margin-bottom: 22px;
+
+    @include media(576px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &-buttons {
+        @include flexCenter;
+        @include media(576px) {
+            margin-left: auto;
+        }
+    }
+
+    &-title {
+        h3 {
+            @include futuraFontStyle(500, 28, 36, $black);
+            margin-bottom: 8px;
+            @include media(991px) {
+                @include mediaFontStyle(22, 28);
+            }
+            @include media(768px) {
+                @include mediaFontStyle(20, 26);
+            }
+        }
+    }
+}
+
+// Appointment View
+.mp_app-details {
+
+    margin-bottom: 48px;
+    @include media(991px) {
+        margin-bottom: 30px;
+    }
+
+    &-modal {
+        padding: 20px 28px;
+        @include media(576px) {
+            padding: 20px;
+        }
+    }
+
+    &-user {
+        h2 {
+            @include futuraFontStyle(500, 28, 36, $black);
+            margin-bottom: 36px;
+            @include media(991px) {
+                @include mediaFontStyle(24, 30);
+            }
+            @include media(576px) {
+                @include mediaFontStyle(20, 26);
+            }
+        }
+        h4 {
+            @include futuraFontStyle(500, 18, 23, $black);
+            margin-bottom: 8px;
+            @include media(576px) {
+                @include mediaFontStyle(16, 22);
+                margin-bottom: 4px;
+            }
+        }
+        span {
+            @include futuraFontStyle(400, 16, 21, rgba(0, 0, 0, 0.7));
+            @include media(576px) {
+                @include mediaFontStyle(14, 20);
+            }
+        }
+    }
+
+    &-info {
+        .mp_app-info {
+            @include flexCenter;
+            margin-bottom: 20px;
+            @include media(576px) {
+                margin-bottom: 10px;
+            }
+    
+            img {
+                @include square(40px);
+                border-radius: 50%;
+                margin-right: 14px;
+                @include media(576px) {
+                    @include square(35px);
+                }
+            }
+            p {
+                @include futuraFontStyle(400, 18, 23, $black);
+                @include media(991px) {
+                    @include mediaFontStyle(16, 22);
+                }
+            }
+        }
+    }
+
+    &-note {
+        background: #E3E3E3;
+        border-radius: 8px;
+        padding: 18px;
+        p {
+            @include futuraFontStyle(400, 14, 20, #3F3F3F);
+        }
+    }
+}

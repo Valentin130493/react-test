@@ -1,0 +1,339 @@
+// Port
+.m_portal {
+    background-color: $white;
+
+    .mp_container {
+        max-width: 1230px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+        display: flex;
+        justify-content: space-between;
+
+        @include media(768px) {
+            flex-direction: column;
+        }
+    }
+
+    &-layout {
+        padding: 60px 20px;
+
+        @include media(1024px) {
+            padding: 40px 0;
+        }
+        @include media(768px) {
+            padding: 20px 0;
+        }
+    }
+
+    &-widgets {
+        max-width: 785px;
+        width: 100%;
+        margin-right: 20px;
+
+        @include media(1024px) {
+            margin-right: 10px;
+        }
+        @include media(768px) {
+            max-width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    &-cal {
+        width: 100%;
+        background-color: #000000;
+        max-width: 375px;
+        margin-left: 20px;
+        @include media(1024px) {
+            margin-left: 10px;
+        }
+        @include media(768px) {
+            max-width: 100%;
+            margin-left: 0;
+        }
+    }
+    
+}
+
+.m_portal-widget {
+    background: #E3E3E3;
+    border-radius: 8px;
+    padding: 28px;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 40px;
+
+    &.dark {
+        background-color: $black;
+    }
+
+    @include media(1024px) {
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+    
+    &-col {
+        @include flexBetween;
+        margin: 0 -20px;
+
+        @include media(1024px) {
+            flex-direction: column;
+            margin: 0;
+        }
+
+
+        > div {
+            max-width: calc(50% - 20px);
+            width: 100%;
+            margin: 0 20px;
+            @include media(1024px) {
+                max-width: 100%;
+                margin: 0 0 20px;
+            }
+        }
+    }
+
+    &-header {
+        margin-bottom: 15px;
+        @include media(576px) {
+            margin-bottom: 10px;
+        }
+    
+        p {
+            @include futuraFontStyle(400, 14, 18, #515151);
+        }
+    }
+    &-title {
+        margin-bottom: 8px;
+        @include flexCenterBetween;
+        @include media(576px) {
+            margin-bottom: 5px;
+        }
+
+        &.dark {
+            h4 {
+                color: $white;
+            }
+        }
+
+        h4 {
+            @include futuraFontStyle(500, 20, 26, $black);
+            
+            @include media(576px) {
+                @include mediaFontStyle(18, 24);
+            }
+        }
+        a {
+            @include futuraFontStyle(450, 14, 18, #5A81FA);            
+        }
+
+    }
+}
+
+// Welcome widget
+.m_portal-dash {
+    padding: 28px 48px;
+    @include flexCenterBetween;
+
+    @include media(1024px) {
+        padding: 20px;
+    }
+
+    @include media(576px) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    &-user-text {
+        max-width: 335px;
+        width: 100%;
+        padding-right: 30px;
+
+        .m_portal-dash-date {
+            @include futuraFontStyle(400, 14, 18, #515151);
+            display: block;
+            margin-bottom: 6px;
+        }
+        h3 {
+            @include futuraFontStyle(500, 28, 36, #111315);
+            margin-bottom: 12px;
+            @include media(768px) {
+                @include mediaFontStyle(24, 30);
+            }
+            @include media(576px) {
+                @include mediaFontStyle(20, 26);
+            }
+        }
+        p {
+            @include futuraFontStyle(400, 16, 22, #000000);
+            margin-bottom: 40px;
+            @include media(576px) {
+                @include mediaFontStyle(14, 20);
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &-user-img {
+        max-width: 235px;
+        height: 100%;
+
+        @include media(576px) {
+            margin-bottom: 20px;
+            max-width: 200px;
+        }
+
+        img {
+            @include square(100%);
+        }
+    }
+}
+
+
+// File
+.mp_file-report {
+
+    @include flexCenterBetween;
+    padding: 12px 0;
+
+    @include media(576px) {
+        padding: 6px 0;
+    }
+
+    &-info {
+        @include flexCenter;
+        max-width: calc(100% - 90px);
+    }
+    &-icon {
+        position: relative;
+        margin-right: 12px;
+        display: flex;
+        width: 35px;
+        height: 40px;
+        flex-shrink: 0;
+        img {
+            @include square(100%);
+        }
+
+        @include media(576px) {
+            width: 26px;
+        }
+
+        span {
+            position: absolute;
+            @include futuraFontStyle(450, 9, 21, $white);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &-view {
+        a, span {
+            @include futuraFontStyle(400, 14, 18, #5A81FA);
+            cursor: pointer;
+        }
+    }
+    &-name {
+        margin-right: 15px;
+        width: 100%;
+
+        p {
+            @include futuraFontStyle(450, 16, 21, $black);
+            @include media(576px) {
+                @include mediaFontStyle(14, 20);
+            }
+        }
+        span {
+            @include futuraFontStyle(400, 14, 18, #515151);
+        }
+    }
+    &-download {
+        cursor: pointer;
+        svg {
+            @include media(576px) {
+                width: 15px;
+            }
+        }
+    }
+}
+
+// Bloodtype
+.m_portal-blood-type {
+    @include flexCenter;
+    @include media(576px) {
+        flex-direction: column;
+    }
+
+    ul {
+        width: 100%;
+        @include flexCenterBetween;
+    
+        span {
+            @include futuraFontStyle(400, 16, 21, #515151);
+        }
+        p {
+            @include futuraFontStyle(450, 18, 23, $black);
+            margin-top: 4px;
+            @include media(576px) {
+                @include mediaFontStyle(16, 22);
+            }
+        
+        }
+    }
+    &-icon {
+        @include flexCenterCenter;
+        background: $black;
+        border-radius: 50%;
+        @include square(48px);
+        margin-right: 12px;
+        flex-shrink: 0;
+        @include media(576px) {
+            @include square(36px);
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.m_portal-appointment {
+    background: #1F1F1F;
+    border-radius: 4px;
+    padding: 20px;
+    @include flexCenterBetween;
+    margin-bottom: 12px;
+
+    &-name {
+        width: 100%;
+        max-width: calc(100% - 20px);
+
+        h5 {
+            @include futuraFontStyle(450, 18, 23, $white);
+            margin-bottom: 6px;
+        }
+        p {
+            @include futuraFontStyle(400, 16, 21, rgba(255, 255, 255, 0.7));
+        }
+    }   
+}
+
+.mp_filter {
+    &-sort {
+        p {
+            @include futuraFontStyle(450, 16, 21, rgba(0, 0, 0, 0.5));
+        }
+        
+        &-text {
+            margin-left: 5px;
+            @include futuraFontStyle(450, 16, 21, $black);
+            cursor: pointer;
+            @include flexCenter;
+
+            i {
+                display: block;
+                margin-left: 8px;
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+// Chat
+.m_chat-search {
+    input {
+        @include futuraFontStyle(400, 16, 21, $white);
+        letter-spacing: -0.165px;
+        background: url('../../assets/images/search.svg'), rgba(255, 255, 255, 0.2);
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+        border-radius: 4px;
+        padding: 10px 14px;
+        outline: none;
+        border: none;
+        width: 100%;
+    }
+}
+.m_chat-user {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    cursor: pointer;
+    
+    &-list {
+        background-color: $black;
+        max-width: 345px;
+        width: 100%;
+        border-radius: 8px;
+        padding: 28px 20px;
+    }
+
+    &-avatar {
+        @include square(45px);
+        border-radius: 50%;
+        margin-right: 15px;
+        flex-shrink: 0;
+        
+        img {
+            @include square(45px);
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+    &-name { 
+        max-width: calc(100% - 70px);
+    }
+    &-info {
+        max-width: calc(100% - 70px);
+        @include flexCenter;
+
+        p {
+			@include futuraFontStyle(450, 16, 21, $white);
+            margin-bottom: 6px;
+        }
+        span {
+			@include futuraFontStyle(400, 14, 18, rgba(255, 255, 255, 0.7));
+            display: block;
+        }
+    }
+    &-time {
+        span {
+			@include futuraFontStyle(450, 14, 18, #606060);
+        }
+    }    
+}

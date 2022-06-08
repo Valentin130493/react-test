@@ -1,0 +1,25 @@
+@import './helpers/variable.scss';
+@import './helpers/mixins.scss';
+@import './base/common.scss';
+@import './base/reset.scss';
+@import './modules/header.scss';
+@import './modules/footer.scss';
+@import './global.scss';
+
+
+@import './modules/auth.scss'; /* For Authentication */
+@import './modules/clinics.scss'; /* For Clinics */
+
+// Components
+@import './components/modal.scss'; /* For Modal */
+@import './components/buttons.scss'; /* For Buttons */
+@import './components/datepicker'; /* For DatePicker */
+@import './components/tooltip'; /* For Tooltip */
+
+@import './modules/home/appointment.scss'; /* For Home */
+@import './modules/booking/booking.scss'; /* For Booking */
+
+// Portal
+@import './portal/portal'; /* For Portal */
+@import './portal/components/header'; /* For Header */
+@import './portal/chat'; /* For Chat */

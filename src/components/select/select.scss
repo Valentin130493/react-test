@@ -1,0 +1,16 @@
+// Buttons
+
+@import './../../styles/helpers/variable.scss';
+@import './../../styles/helpers/mixins.scss';
+@import './../../styles/base/common.scss';
+
+.form-group {
+  select {
+    border: 1.2px solid #E1E1E1;
+    border-radius: 4px;
+    width: 100%;
+    padding: 10px 12px;
+    @include futuraFontStyle(400, 16, 21, #000000);
+    outline: none;
+  }
+}

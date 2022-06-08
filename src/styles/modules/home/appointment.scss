@@ -1,0 +1,88 @@
+// Appointment
+.appointment {
+    &-section {
+        background-color: #EBEBEB;
+    }
+
+    &-wpr {
+        background-color: $white;
+        padding: 24px 24px 12px;
+        border-radius: 4px;
+        @include media575 {
+            padding: 15px 15px 8px;
+        }
+    }
+
+    &-form {
+        display: flex;
+        align-items: center;
+        @include media991 {
+            flex-wrap: wrap;
+        }
+
+        .col {
+            max-width: 25%;
+            width: 100%;
+            padding-right: 12px;
+            margin-bottom: 20px;
+
+            @include media991 {
+                max-width: 50%;
+            }
+            @include media575 {
+                max-width: 100%;
+            }
+            
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+        button {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            input, select {
+                border: 1.2px solid #E1E1E1;
+                border-radius: 4px;
+                width: 100%;
+                padding: 10px 12px;
+                @include futuraFontStyle(400, 16, 21, #000000);
+                outline: none;
+            }
+        }
+    }
+
+    &-labels {
+        
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &-sec {
+            p {
+                @include futuraFontStyle(400, 16, 21, #000000);
+                letter-spacing: -0.011em;
+                margin-bottom: 12px;
+            }
+        }
+
+        li {
+            list-style: none;
+            background: #F4F4F4;
+            border-radius: 4px;
+            padding: 8px 12px;
+            @include futuraFontStyle(400, 14, 18, #000000);
+            display: flex;
+            align-items: center;
+            margin: 0 12px 12px 0;
+
+            span {
+                display: flex;
+                padding-left: 15px;
+                cursor: pointer;
+            }
+        }
+    }
+}

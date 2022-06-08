@@ -1,0 +1,78 @@
+.mp_datepicker {
+
+    &-input {
+        @include futuraFontStyle(500, 20, 26, $black);
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        outline: none;
+        @include flexCenter;
+        margin-right: 24px;
+        cursor: pointer;
+        @include media(991px) {
+            @include mediaFontStyle(18, 24);
+            margin-right: 20px;
+        }
+        @include media(576px) {
+            @include mediaFontStyle(16, 22);
+        }
+
+        i {
+            display: block;
+            margin-left: 8px;
+        }
+    }
+
+    .react-datepicker {
+        border-bottom: 1px solid #C6C6C6;
+
+        &-popper {
+            z-index: 55;
+        }
+
+        &__header {
+            background: #F0F0F0;            
+            @include futuraFontStyle(450, 18, 24, $black);
+            border-bottom: 1px solid #EBE9E9 !important;
+        }
+
+        &__navigation {
+            top: 8px;
+            &-icon {
+                &::before {
+                    border-color: $black;
+                }
+            }
+        }
+
+        &__month {
+            &-text {
+                margin: 4px !important;
+                width: 80px !important;
+                @include futuraFontStyle(400, 16, 22, $black);
+                border-radius: 4px;
+
+                &--today {
+                    background-color: $black;
+                    color: $white;
+                    &:hover {
+                        background-color: $black !important;
+                        color: $white;
+                    }
+                }
+
+                &--keyboard-selected {
+                    background-color: #BAB9B9;
+                }
+            }
+
+            &--selected {
+                background-color: #BAB9B9;
+                &:hover {
+                    background-color: $black !important;
+                    color: $white;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+// Buttons
+.m_btn {
+    @include futuraFontStyle(450 , 16, 21, $white);
+    padding: 10px 28px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+    @include media575 {
+        @include mediaFontStyle(14, 18);
+        padding: 8px 25px;
+    }
+
+    &.small {
+        padding: 6px 28px;
+    }
+
+    &-black {
+        background-color: $black;
+
+        &.light {
+            background-color: $white;
+            color: $black;
+            border: 2px solid $black;
+        }
+    }
+
+    &-flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            display: flex;
+            margin-right: 12px;
+        }
+    }
+}

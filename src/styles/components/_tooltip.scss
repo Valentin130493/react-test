@@ -1,0 +1,15 @@
+// Tooltips
+
+.m_tooltip {
+    &-content {
+        border: 1px solid #EBE9E9 !important;
+    }
+
+    &-menu {
+        li {
+            @include futuraFontStyle(450, 16, 21, $black);
+            margin: 10px 5px;
+            cursor: pointer;
+        }
+    }
+}

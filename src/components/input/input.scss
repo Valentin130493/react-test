@@ -1,0 +1,41 @@
+// Input
+
+@import './../../styles/helpers/variable.scss';
+@import './../../styles/helpers/mixins.scss';
+@import './../../styles/base/common.scss';
+
+.form-group {
+  input {
+    border: 1.2px solid #E1E1E1;
+    border-radius: 4px;
+    width: 100%;
+    padding: 10px 12px;
+    @include futuraFontStyle(400, 16, 21, #000000);
+    outline: none;
+  }
+}
+.form-control {
+  margin-bottom: 22px;
+  
+  label {
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    display: block;
+    margin-bottom: 12px;
+  }
+  input {
+    border: 1.2px solid #EFEFEF;
+    border-radius: 8px;
+    font-family: "Gilroy";
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(0, 0, 0, 0.7);
+    padding: 13px 16px;
+    width: 100%;
+    outline: none;
+  }
+}

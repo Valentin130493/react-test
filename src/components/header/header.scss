@@ -1,0 +1,337 @@
+// Header
+
+@import './../../styles/helpers/variable.scss';
+@import './../../styles/helpers/mixins.scss';
+@import './../../styles/base/common.scss';
+@import './../../styles/base/reset.scss';
+@import './../../styles/portal/portal';
+
+// Header - Navigation
+.main-header {
+	padding: 21px 0;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	transition: 0.2s;
+
+	&.fixed-header {
+		background-color: $white;
+		box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
+		padding: 16px 0;
+	}
+
+	.container {
+		max-width: 1250px;
+	}
+
+	.navbar {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.navbar-brand {
+			display: block;
+			margin-right: 80px;
+		}
+
+		.navbar-toggler {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+
+			@media (min-width:992px) {
+				display: none;
+			}
+
+			img {
+				width: 25px;
+			}
+		}
+
+		.navbar-collapse {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			transition: transform 0.3s linear;
+			width: 100%;
+
+			@include media991 {
+				// display: none;
+				visibility: hidden;
+				position: absolute;
+				background-color: $white;
+				right: 0;
+				top: 48px;
+				padding: 10px;
+				box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
+				min-width: 100%;
+				transition: transform 0.3s linear;
+			}
+
+			&.collapse-open {
+				// display: block;
+				visibility: visible;
+				transform: translateY(0);
+				transition: transform 0.3s linear;
+				display: block;
+			}
+
+      		.navbar-nav {
+				display: flex;
+				list-style: none;
+
+				@include media991 { flex-direction: column; }
+
+				.nav-item {
+					padding: 0 16px;
+
+					@include media1366 { padding: 0 10px; }
+					@include media991 { padding: 6px 0; }
+
+					.nav-link {
+						display: block;
+						@include futuraFontStyle(500, 16, 21, $black);
+					}
+				}
+      		}
+
+			.nav-btn {
+				@include media991 {
+					display: flex;
+					flex-direction: column;
+				}
+
+				button {
+					margin-left: 12px;
+
+					@include media991 {
+						margin-left: 0;
+						margin-bottom: 10px;
+						display: inline-flex;
+						width: fit-content;
+					}
+				}
+			}
+   		}
+  	}
+}
+
+// Header - Hero Section
+.hero-header {
+	padding: 208px 0 40px;
+	background: #EBEBEB;
+	margin-bottom: 50px;
+
+	@include media767 { padding: 150px 0 40px; }
+
+	&-content {
+		max-width: 615px;
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+		padding-bottom: 120px;
+
+		@include media767 {
+			padding-bottom: 90px;
+		}
+
+		@include media575 {
+			padding-bottom: 70px;
+		}
+
+		.hero-header-tagline {
+			@include futuraFontStyle(400, 18, 24, #5A81FA);
+			display: block;
+			margin-bottom: 12px;
+		}
+
+		h1 {
+			@include futuraFontStyle(600, 60, 66, $black);
+			letter-spacing: -0.02em;
+			margin-bottom: 22px;
+
+			@include media991 {
+				@include mediaFontStyle(50, 56);
+			}
+
+			@include media767 {
+				@include mediaFontStyle(40, 46);
+			}
+
+			@include media575 {
+				@include mediaFontStyle(30, 36);
+			}
+		}
+
+		h5 {
+			@include futuraFontStyle(400, 20, 28, $black);
+
+			@include media575 {
+				@include mediaFontStyle(16, 20);
+			}
+		}
+  }
+}
+
+// Portal - Header
+.m_portal-header {
+	background: #EBEBEB;
+	padding: 20px 0;
+
+	.mp_header {
+
+		@include flexCenterBetween;
+		width: 100%;
+		@include media(1024px) {
+			padding-left: 50px;
+		}	
+
+		// Navbar
+		&-nav {
+			@include media(1024px) {				
+				position: fixed;
+				left: -100%;
+				top: 0;
+				background: #fff;
+				height: 100%;
+				z-index: 5555;
+				box-shadow: 0px 4px 16px rgba(26, 36, 49, 0.08), 0px 16px 16px rgba(26, 36, 49, 0.04);
+				max-width: 300px;
+				width: 100%;
+				padding: 80px 0;
+				transition: 0.2s linear;
+			}
+
+			&-open {
+				left: 0;
+			}
+
+			ul {
+				@include media(1024px) {
+					flex-direction: column;
+				}
+			}
+			li {
+				margin: 0 20px;			
+				@include media(1024px) {
+					margin: 10px 20px;
+				}	
+
+				a {
+					@include futuraFontStyle(450, 16, 21, $black);
+					&:hover {
+						color: #5A81FA;
+					}
+				}
+			}
+		}
+
+		// Options
+		&-options {
+			@include flexCenter;
+
+			&-icons {
+				li {
+					background: #E3E3E3;
+					border-radius: 50%;
+					@include square(48px);
+					@include flexCenterCenter;
+					margin-left: 12px;
+					@include media(1024px) {
+						@include square(34px);
+					}
+					svg {
+						@include media(1024px) {
+							width: 14px;
+						}
+					}
+				}
+			}
+		}
+
+		&-toggler {
+			display: none;
+			background-color: none;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			padding: 0;
+			width: 24px;
+			position: absolute;
+			left: 20px;
+			z-index: 555555;
+
+			@include media(1024px) {
+				display: flex;
+			}
+		}
+
+    	&-user {
+
+			@include flexCenter;
+			cursor: pointer;
+			margin-left: 40px;
+			@include media(1024px) {
+				margin-left: 15px;
+			}
+
+			&-image {
+				position: relative;
+				margin-right: 16px;
+			}
+
+			&-avatar {
+				@include square(48px);
+				border-radius: 50%;
+				@include media(1024px) {
+					@include square(34px);
+				}
+
+				img {
+					@include square(100%);
+					border-radius: 50%;
+				}
+			}
+
+			&-status {
+				display: block;
+				@include square(8px);
+				border: 1px solid #EBEBEB;
+				border-radius: 50%;
+				position: absolute;
+				bottom: 3px;
+				right: 3px;
+
+				&.active {
+					background: #14AE5C;
+				}
+			}
+
+			&-info {
+				p {
+					@include futuraFontStyle(450, 18, 23, $black);
+					margin-bottom: 4px;
+					@include media(1024px) {
+						margin-bottom: 0;
+						@include mediaFontStyle(16, 22);
+					}
+
+					i {
+						display: block;
+						margin-left: 6px;
+					}
+				}
+
+				span {
+					@include futuraFontStyle(400, 16, 21, rgba($black, 0.7));
+					@include media(1024px) {
+						display: none;
+					}
+				}
+			}
+   		}
+  	}
+}
